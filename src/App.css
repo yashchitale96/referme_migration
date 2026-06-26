@@ -4,8 +4,14 @@
   align-items: center;
   justify-content: center;
   background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%);
-  padding: 24px;
+  padding: 20px;
   box-sizing: border-box;
+
+  @media (max-width: 400px) {
+    padding: 12px;
+    align-items: flex-start;
+    padding-top: 24px;
+  }
 
   @media (prefers-color-scheme: dark) {
     background: linear-gradient(135deg, #1a1625 0%, #120f1e 100%);
@@ -31,7 +37,13 @@
   }
 
   @media (max-width: 600px) {
-    padding: 32px 24px;
+    padding: 32px 20px;
+    border-radius: 16px;
+  }
+
+  @media (max-width: 400px) {
+    padding: 24px 16px;
+    border-radius: 14px;
   }
 }
 
@@ -45,7 +57,13 @@
   text-transform: uppercase;
   padding: 6px 16px;
   border-radius: 999px;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
+
+  @media (max-width: 400px) {
+    font-size: 11px;
+    padding: 5px 12px;
+    margin-bottom: 16px;
+  }
 }
 
 .title {
@@ -54,6 +72,16 @@
   color: #1a1625;
   margin: 0 0 16px;
   line-height: 1.2;
+  letter-spacing: -0.5px;
+
+  @media (max-width: 600px) {
+    font-size: 1.6rem;
+  }
+
+  @media (max-width: 400px) {
+    font-size: 1.35rem;
+    margin-bottom: 12px;
+  }
 
   @media (prefers-color-scheme: dark) {
     color: #f3f0ff;
@@ -63,8 +91,13 @@
 .intro {
   color: #6b6375;
   font-size: 1rem;
-  margin-bottom: 28px;
+  margin-bottom: 24px;
   line-height: 1.6;
+
+  @media (max-width: 400px) {
+    font-size: 0.92rem;
+    margin-bottom: 20px;
+  }
 
   @media (prefers-color-scheme: dark) {
     color: #a09ab5;
@@ -75,11 +108,16 @@
   background: linear-gradient(135deg, #f5f3ff, #ede9fe);
   border: 1.5px solid #c4b5fd;
   border-radius: 12px;
-  padding: 18px 24px;
-  margin-bottom: 20px;
+  padding: 16px 20px;
+  margin-bottom: 16px;
   display: flex;
   flex-direction: column;
   gap: 6px;
+
+  @media (max-width: 400px) {
+    padding: 14px 16px;
+    border-radius: 10px;
+  }
 
   @media (prefers-color-scheme: dark) {
     background: linear-gradient(135deg, #2d1f4e, #241740);
@@ -88,7 +126,7 @@
 }
 
 .box-label {
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   font-weight: 600;
   color: #7c3aed;
   text-transform: uppercase;
@@ -100,14 +138,23 @@
 }
 
 .new-link {
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   font-weight: 700;
   color: #5b21b6;
   text-decoration: none;
   word-break: break-all;
+  overflow-wrap: anywhere;
 
   &:hover {
     text-decoration: underline;
+  }
+
+  @media (max-width: 600px) {
+    font-size: 1rem;
+  }
+
+  @media (max-width: 400px) {
+    font-size: 0.92rem;
   }
 
   @media (prefers-color-scheme: dark) {
@@ -119,15 +166,24 @@
   background: #fffbeb;
   border: 1.5px solid #fcd34d;
   border-radius: 12px;
-  padding: 14px 20px;
-  margin-bottom: 24px;
+  padding: 14px 18px;
+  margin-bottom: 20px;
   text-align: left;
 
   p {
     color: #78350f;
     font-size: 0.92rem;
-    line-height: 1.5;
+    line-height: 1.55;
     margin: 0;
+  }
+
+  @media (max-width: 400px) {
+    padding: 12px 14px;
+    border-radius: 10px;
+
+    p {
+      font-size: 0.85rem;
+    }
   }
 
   @media (prefers-color-scheme: dark) {
@@ -152,6 +208,7 @@
   border-radius: 4px;
   font-size: 0.88rem;
   text-decoration: line-through;
+  white-space: nowrap;
 
   @media (prefers-color-scheme: dark) {
     background: #3b0f0f;
@@ -162,7 +219,13 @@
 .cta {
   color: #6b6375;
   font-size: 0.95rem;
-  margin-bottom: 28px;
+  margin-bottom: 24px;
+  line-height: 1.55;
+
+  @media (max-width: 400px) {
+    font-size: 0.88rem;
+    margin-bottom: 20px;
+  }
 
   @media (prefers-color-scheme: dark) {
     color: #a09ab5;
@@ -170,7 +233,7 @@
 }
 
 .visit-btn {
-  display: inline-block;
+  display: block;
   background: linear-gradient(135deg, #7c3aed, #a855f7);
   color: #fff;
   text-decoration: none;
@@ -180,14 +243,25 @@
   font-weight: 600;
   letter-spacing: 0.3px;
   transition: opacity 0.2s, transform 0.15s;
-  margin-bottom: 28px;
+  margin-bottom: 24px;
+  box-sizing: border-box;
 
-  &:hover {
-    opacity: 0.9;
-    transform: translateY(-1px);
+  @media (hover: hover) {
+    &:hover {
+      opacity: 0.9;
+      transform: translateY(-1px);
+    }
   }
+
   &:active {
+    opacity: 0.85;
     transform: translateY(0);
+  }
+
+  @media (max-width: 400px) {
+    padding: 13px 24px;
+    font-size: 0.95rem;
+    border-radius: 10px;
   }
 }
 
@@ -195,6 +269,10 @@
   color: #6b6375;
   font-size: 0.95rem;
   margin-bottom: 4px;
+
+  @media (max-width: 400px) {
+    font-size: 0.88rem;
+  }
 
   @media (prefers-color-scheme: dark) {
     color: #a09ab5;
@@ -206,4 +284,8 @@
   font-size: 0.88rem;
   font-style: italic;
   margin: 0;
+
+  @media (max-width: 400px) {
+    font-size: 0.82rem;
+  }
 }
